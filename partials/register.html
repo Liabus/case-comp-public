@@ -1,13 +1,17 @@
 <div class="container">
 	<div id="registration">
 		<h2>Add Application</h2>
-			<form ng-controller="RegisterCtrl">
+			<div ng-show="submitted">
+				Thanks for submitting your application with us! We'll be in touch. <br /><br />
+				<a href="/">Go home.</a>
+			</div>
+			<form ng-controller="RegisterCtrl" name="form" ng-hide="submitted">
 				<div class="row">
 					<div class="col-md-4">
 						<h4>First Name</h4>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control" placeholder="First Name" ng-model="application.firstName">
+						<input type="text" class="form-control" placeholder="First Name" ng-model="application.firstName" required>
 					</div>
 				</div>
 
@@ -16,7 +20,7 @@
 						<h4>Last Name</h4>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control" placeholder="Last Name" ng-model="application.lastName">
+						<input type="text" class="form-control" placeholder="Last Name" ng-model="application.lastName" required>
 					</div>
 				</div>
 
@@ -25,7 +29,7 @@
 						<h4>Telephone Number</h4>
 					</div>
 					<div class="col-md-8">
-						<input type="tel" class="form-control ng-invalid ng-invalid-required ng-valid-mask ng-dirty" ui-mask="(999) 999-9999" required="" placeholder="(___) ___-____" ng-model="application.phone">
+						<input type="tel" class="form-control ng-invalid ng-invalid-required ng-valid-mask ng-dirty" ui-mask="(999) 999-9999" required="" placeholder="(___) ___-____" ng-model="application.phone" required>
 					</div>
 				</div>
 
@@ -34,7 +38,7 @@
 						<h4>Email</h4>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control" placeholder="Email" ng-model="application.email">
+						<input type="text" class="form-control" placeholder="Email" ng-model="application.email" required>
 					</div>
 				</div>
 
@@ -43,7 +47,7 @@
 						<h4>GPA</h4>
 					</div>
 					<div class="col-md-8">
-						<input type="text" class="form-control" placeholder="GPA" ng-model="application.GPA">
+						<input type="text" class="form-control" placeholder="GPA" ng-model="application.GPA" required>
 					</div>
 				</div>
 
@@ -114,7 +118,7 @@
 					<div class="col-md-4">
 					</div>
 					<div class="col-md-8">
-						<button type="submit" class="btn btn-success">Create Account &raquo;</button>
+						<button type="submit" class="btn btn-success" ng-click="submit();" ng-disabled="form.$invalid">Create Account &raquo;</button>
 					</div>
 				</div>
 			</form>

@@ -30,6 +30,13 @@ frontController.controller('JobDetailCtrl', ['$scope', '$routeParams', '$http', 
 	  	});	    
   	}]);
 
-frontController.controller('RegisterCtrl', ['$scope','$http',
-	function RegisterCtrl($scope, $http) {
+frontController.controller('RegisterCtrl', ['$scope','$http', function($scope, $http) {
+		$scope.submit = function() {
+			$scope.application.applicant = true;
+			$scope.submitted = true;
+			$http.post('http://blackwood.liabus.com/api/applicants', $scope.application).success(function(){
+				console.log('it worked, jabrone');
+				window.location.href = "/";
+			});
+		}
 	}]);
