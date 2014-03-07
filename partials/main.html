@@ -1,0 +1,43 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1>Blackwood Consulting</h1>
+		<p>Working at Facebook means doing what you love. We hire trailblazers, hackers and pioneers. We want people who can solve challenging problems, make a real impact and build something big. You should join us. </p>
+
+		<p><a class="btn btn-primary btn-lg" role="button" href="#/register">Add Application &raquo;</a></p>
+	</div>
+</div>
+
+<div class="container">
+
+  <h1>Current Openings</h1>
+
+  <br>
+
+  <div id="job-search">
+    <input type="text" class="form-control" placeholder="Search..." ng-model="name">
+    <a class="btn btn-default" href="#" role="button">Search &raquo;</a>
+  </div>
+
+  <br>
+
+  <div id="jobs-list" ng-controller="MainPageCtrl">
+    <hr>
+    
+    <!-- Meant to be repeated -->
+    <div class="job-item" ng-repeat="item in data | filter:name">
+      <div class="row">
+        <div class="col-md-3">
+          <h3>{{item.name}}</h3>
+        </div>
+        <div class="col-md-7">
+          <p>{{item.description}}</p>
+        </div>
+        <div class="col-md-2">
+          <a class="btn btn-default" href="#/jobs/{{item.id}}" role="button">View Job &raquo;</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+  </div>
+</div> <!-- /container -->

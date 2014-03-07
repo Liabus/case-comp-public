@@ -1,0 +1,123 @@
+<div class="container">
+	<div id="registration">
+		<h2>Add Application</h2>
+			<form ng-controller="RegisterCtrl">
+				<div class="row">
+					<div class="col-md-4">
+						<h4>First Name</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="First Name" ng-model="application.firstName">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Last Name</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="Last Name" ng-model="application.lastName">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Telephone Number</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="tel" class="form-control ng-invalid ng-invalid-required ng-valid-mask ng-dirty" ui-mask="(999) 999-9999" required="" placeholder="(___) ___-____" ng-model="application.phone">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Email</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="Email" ng-model="application.email">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>GPA</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="GPA" ng-model="application.GPA">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Address</h4>
+					</div>
+					<div class="col-md-8">
+						<textarea class="form-control ng-pristine ng-valid" ng-model="application.address"></textarea>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>University</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="University" ng-model="application.university">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Major</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="Major" ng-model="application.major">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Minor</h4>
+					</div>
+					<div class="col-md-8">
+						<input type="text" class="form-control" placeholder="Minor" ng-model="application.minor">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Experience</h4>
+					</div>
+					<div class="col-md-8">
+						<textarea class="form-control ng-pristine ng-valid" ng-model="application.experience"></textarea>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Interests</h4>
+					</div>
+					<div class="col-md-8">
+						<textarea class="form-control ng-pristine ng-valid" ng-model="application.interests"></textarea>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Skills</h4>
+					</div>
+					<div class="col-md-8">
+						<textarea class="form-control ng-pristine ng-valid" ng-model="application.skills"></textarea>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-8">
+						<button type="submit" class="btn btn-success">Create Account &raquo;</button>
+					</div>
+				</div>
+			</form>
+	</div>
+	
+</div>

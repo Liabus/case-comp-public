@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="RecruitMeFront">
+	<head>
+
+		<!-- Bootstrap core CSS -->
+	    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- angular dependecies -->
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-route.js"></script>
+		<script src="src/app.js"></script>
+		<script src="src/controllers.js"></script>
+		<link rel="stylesheet" type="text/css" href="src/style.css">
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-inverse" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">RecruitMe</a>
+	        </div>
+	      </div>
+	    </nav>
+
+        <div ng-view></div>
+
+        <footer class="container">
+	        <hr>
+			<p>&copy; Blackwood Consulting 2014</p>
+		</footer>
+
+	</body>
+</html>

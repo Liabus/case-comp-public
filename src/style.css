@@ -1,0 +1,80 @@
+.navbar {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.job-list-small {
+	margin-bottom: 5px;
+}
+
+.job-list-small p {
+	margin-bottom: 0px;
+}
+
+.job-list-small hr {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.job-l-sm-inside {
+	height: 20px;
+}
+
+.job-l-sm-left {
+	display: inline-block;
+	float: left;
+}
+
+.job-l-sm-right {
+	display: inline-block;
+	float: right;
+}
+
+#login-box {
+}
+
+#login-box p {
+	margin-bottom: 20px;
+}
+
+#job-search {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#job-search input {
+	width: 690px;
+	float: left;
+}
+
+#job-search button {
+	width: 100px;
+	float: right;
+}
+
+.job-item ul {
+	list-style: none;
+}
+
+.job-item ul li {
+	float: left;
+}
+
+.job-list-title {
+
+}
+
+#registration {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#registration h4 {
+	text-align: right;
+}
+
+textarea {
+	margin-bottom: 3px;
+}
