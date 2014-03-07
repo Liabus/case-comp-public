@@ -2,30 +2,11 @@
 
 var frontController = angular.module('RecruitMeFrontControllers', []);
 
-frontController.controller('MainPageCtrl', ['$scope', '$http', function($scope) {
-  	$scope.data = [
-  					{
-						"name": "CEO",
-						"description": "Be the boss of the company",
-						"location": "Chicago",
-						"type": "Full Time",
-						"id": "CEO"
-					},
-					{
-						"name": "Engineer",
-						"description": "Do engineer things",
-						"location": "Chicago",
-						"type": "Full Time",
-						"id": "engineer"
-					},
-					{
-						"name": "Salesman",
-						"description": "Do sales things",
-						"location": "Chicago",
-						"type": "Full Time",
-						"id": "sales"
-					}
-				];
+frontController.controller('MainPageCtrl', ['$scope', '$http', function($scope, $http) {
+  	$http.get('http://blackwood.liabus.com/api/jobs/public').success(function(data) {
+	    $scope.data = data;
+	    console.log(data);
+	  });
   }]);
 
 
@@ -34,32 +15,12 @@ frontController.controller('JobDetailCtrl', ['$scope','$http', '$routeParams',
     	$scope.jobId = $routeParams.jobId;
     	console.log($scope.jobId );
 
-    	var data = [
-  					{
-						"name": "CEO",
-						"description": "Be the boss of the company",
-						"location": "Chicago",
-						"type": "Full Time",
-						"experience": "Lots",
-						"id": "CEO"
-					},
-					{
-						"name": "Engineer",
-						"description": "Do engineer things",
-						"location": "Chicago",
-						"type": "Full Time",
-						"experience": "Lots",
-						"id": "engineer"
-					},
-					{
-						"name": "Salesman",
-						"description": "Do sales things",
-						"location": "Chicago",
-						"type": "Full Time",
-						"experience": "Lots",
-						"id": "sales"
-					}
-				];
+    	var data;
+
+    	$http.get('http://blackwood.liabus.com/api/jobs/public').success(function(data) {
+	    	$scope.data = data;
+	    	console.log(data);
+	  	});
 
 	    var index = 0;
 
