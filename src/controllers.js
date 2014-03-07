@@ -3,34 +3,31 @@
 var frontController = angular.module('RecruitMeFrontControllers', []);
 
 frontController.controller('MainPageCtrl', ['$scope', '$http', function($scope, $http) {
+	var tdata;
   	$http.get('http://blackwood.liabus.com/api/jobs/public').success(function(data) {
-	    $scope.data = data;
-	    console.log(data);
+
+	    for( var i = 0; i < data["jobs"].length; i++ ) {
+  			data["jobs"][i].id = data.jobs[i]["_id"];
+  		}
+  		var tdata = data["jobs"];
+
+  		$scope.data = tdata;
 	  });
   }]);
 
 
-frontController.controller('JobDetailCtrl', ['$scope','$http', '$routeParams',
-	function($scope, $routeParams, $http) {
-    	$scope.jobId = $routeParams.jobId;
-    	console.log($scope.jobId );
-
-    	var data;
-
+frontController.controller('JobDetailCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
     	$http.get('http://blackwood.liabus.com/api/jobs/public').success(function(data) {
-	    	$scope.data = data;
-	    	console.log(data);
-	  	});
+    		var jobId = $routeParams.jobId;
+	    	var index = 0;
+	    	var tdata = data["jobs"];
 
-	    var index = 0;
-
-	    for( var i = 0; i < 3; i++ ) {
-	    	if( data[index]["name"] == $scope.jobId )
-	    		index = i;
-	    }
-	    console.log( index );
-
-		$scope.jobData = data[index];
+		    for( var i = 0; i < 3; i++ ) {
+		    	if( tdata[index]["name"] == $scope.jobId )
+		    		index = i;
+		    }
+			$scope.jobData = tdata[index];
+	  	});	    
   	}]);
 
 frontController.controller('RegisterCtrl', ['$scope','$http',
